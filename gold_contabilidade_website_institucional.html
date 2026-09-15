@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gold Contabilidade | Consultoria e Gestão Empresarial Estratégica</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            light: '#E6C687',
+                            DEFAULT: '#C5A059',
+                            dark: '#9A7B38',
+                            metallic: 'linear-gradient(135deg, #BF953F 0%, #FCF6BA 25%, #B38728 50%, #FBF5B7 75%, #AA771C 100%)'
+                        },
+                        dark: {
+                            900: '#0B0C0E',
+                            800: '#121418',
+                            700: '#1C1F26',
+                        },
+                        ice: '#F8FAFC',
+                        beige: '#F5F2EC'
+                    },
+                    fontFamily: {
+                        serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #D4AF37 0%, #FFF3A7 30%, #AA771C 70%, #D4AF37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gold-gradient-bg {
+            background: linear-gradient(135deg, #BF953F 0%, #E2C275 35%, #B38728 70%, #AA771C 100%);
+        }
+
+        .gold-gradient-bg-hover:hover {
+            background: linear-gradient(135deg, #C99E47 0%, #EED288 35%, #BD9132 70%, #B88226 100%);
+        }
+
+        /* Subtle scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0B0C0E;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #C5A059;
+        }
+
+        .glass-dark {
+            background: rgba(18, 20, 24, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        /* Scroll Reveal Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(35px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform, opacity;
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform, opacity;
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(40px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform, opacity;
+        }
+
+        .reveal-scale {
+            opacity: 0;
+            transform: scale(0.93) translateY(20px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform, opacity;
+        }
+
+        .reveal.active, 
+        .reveal-left.active, 
+        .reveal-right.active, 
+        .reveal-scale.active {
+            opacity: 1;
+            transform: translateY(0) translateX(0) scale(1);
+        }
+
+        /* Stagger Delays */
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+        .delay-400 { transition-delay: 400ms; }
+    </style>
+</head>
+<body class="bg-ice text-slate-800 font-sans antialiased selection:bg-gold/20 selection:text-gold-dark">
+
+    <!-- HEADER -->
+    <header id="header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 glass-dark border-b border-gold/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20 sm:h-24">
+                <!-- Logo -->
+                <a href="#inicio" class="flex items-center gap-3 group">
+                    <img src="FOTOS/minha-logo.png" 
+                         alt="Gold Contabilidade Logo" 
+                         class="h-14 sm:h-[67px] w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                         onerror="this.onerror=null; this.src='FOTOS/minha-logo.jpg';">
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex items-center space-x-7">
+                    <a href="#inicio" class="text-sm font-medium text-slate-300 hover:text-gold transition-colors">Início</a>
+                    <a href="#sobre" class="text-sm font-medium text-slate-300 hover:text-gold transition-colors">Sobre Nós</a>
+                    <a href="#servicos" class="text-sm font-medium text-slate-300 hover:text-gold transition-colors">Serviços</a>
+                    <a href="#diferenciais" class="text-sm font-medium text-slate-300 hover:text-gold transition-colors">Diferenciais</a>
+                    <a href="#abertura" class="text-sm font-medium text-slate-300 hover:text-gold transition-colors">Abertura de Empresa</a>
+                    <a href="#calculadora" class="text-sm font-medium text-slate-300 hover:text-gold transition-colors">Cálculo Tributário</a>
+                    <a href="#simulador-trabalhista" class="text-sm font-medium text-gold hover:text-gold-light transition-colors flex items-center gap-1.5 font-semibold">
+                        <i class="fa-solid fa-calculator text-xs"></i> Cálculo Trabalhista
+                    </a>
+                    <a href="#contato" class="text-sm font-medium text-slate-300 hover:text-gold transition-colors">Contato</a>
+                </nav>
+
+                <!-- Call to Action Button -->
+                <div class="hidden lg:block">
+                    <a href="https://wa.me/5591985279847?text=Olá!%20Gostaria%20de%20falar%20com%20um%20especialista%20da%20Gold%20Contabilidade." 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       class="inline-flex items-center justify-center px-5 py-2.5 text-xs font-semibold tracking-wider text-dark-900 uppercase gold-gradient-bg rounded-md hover:shadow-lg hover:shadow-gold/20 transition-all duration-300 transform hover:-translate-y-0.5">
+                        FALE CONOSCO
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-btn" type="button" class="text-slate-300 hover:text-gold p-2 focus:outline-none" aria-label="Abrir menu">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden glass-dark border-b border-gold/20 px-4 pt-2 pb-6 space-y-3">
+            <a href="#inicio" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:text-gold hover:bg-dark-800">Início</a>
+            <a href="#sobre" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:text-gold hover:bg-dark-800">Sobre Nós</a>
+            <a href="#servicos" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:text-gold hover:bg-dark-800">Serviços</a>
+            <a href="#diferenciais" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:text-gold hover:bg-dark-800">Diferenciais</a>
+            <a href="#abertura" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:text-gold hover:bg-dark-800">Abertura de Empresa</a>
+            <a href="#calculadora" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:text-gold hover:bg-dark-800">Cálculo Tributário</a>
+            <a href="#simulador-trabalhista" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-gold hover:bg-dark-800">Cálculo Trabalhista & Rescisão</a>
+            <a href="#contato" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:text-gold hover:bg-dark-800">Contato</a>
+            <div class="pt-2">
+                <a href="https://wa.me/5591985279847?text=Olá!%20Gostaria%20de%20falar%20com%20um%20especialista%20da%20Gold%20Contabilidade." 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="w-full inline-flex items-center justify-center px-5 py-3 text-xs font-semibold tracking-wider text-dark-900 uppercase gold-gradient-bg rounded-md">
+                    FALE CONOSCO
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="relative min-h-screen flex items-center justify-center pt-28 pb-16 bg-dark-900 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="FOTOS/foto interna - gold.jpg" 
+                 alt="Gold Contabilidade - Foto Interna" 
+                 class="w-full h-full object-cover object-center filter brightness-45 contrast-110 scale-105"
+                 onerror="if(!this.dataset.triedPng){ this.dataset.triedPng=1; this.src='FOTOS/foto interna - gold.png'; } else if(!this.dataset.triedJpeg){ this.dataset.triedJpeg=1; this.src='FOTOS/foto interna - gold.jpeg'; }">
+            <div class="absolute inset-0 bg-gradient-to-r from-dark-900/80 via-dark-900/75 to-dark-900/50"></div>
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-gold/10 via-transparent to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7">
+                    <div class="reveal inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-gold/30 bg-gold/10 backdrop-blur-md mb-6">
+                        <span class="w-2 h-2 rounded-full bg-gold animate-pulse"></span>
+                        <span class="text-xs uppercase tracking-widest text-gold-light font-semibold">Excelência e Consultoria de Alto Padrão</span>
+                    </div>
+
+                    <h1 class="reveal delay-100 text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-white leading-tight mb-6">
+                        Contabilidade estratégica para empresas que querem <span class="gold-gradient-text">crescer</span>.
+                    </h1>
+
+                    <p class="reveal delay-200 text-lg sm:text-xl text-slate-300 font-light leading-relaxed mb-10 max-w-2xl">
+                        “Transformamos números em informações para decisões mais seguras, eficientes e estratégicas para o seu negócio.”
+                    </p>
+
+                    <div class="reveal delay-300 flex flex-col sm:flex-row gap-4 sm:items-center">
+                        <a href="https://wa.me/5591985279847?text=Olá!%20Gostaria%20de%20falar%20com%20um%20especialista." 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           class="px-8 py-4 text-xs font-bold tracking-widest text-dark-900 uppercase gold-gradient-bg gold-gradient-bg-hover rounded-lg shadow-xl shadow-gold/10 transition-all duration-300 text-center transform hover:-translate-y-1">
+                            FALE COM UM ESPECIALISTA
+                        </a>
+                        <a href="#simulador-trabalhista" 
+                           class="px-8 py-4 text-xs font-bold tracking-widest text-white uppercase border border-gold/40 hover:border-gold hover:bg-gold/10 rounded-lg backdrop-blur-sm transition-all duration-300 text-center">
+                            SIMULADOR TRABALHISTA
+                        </a>
+                    </div>
+
+                    <div class="reveal delay-400 mt-12 flex items-center gap-4">
+                        <div class="h-px w-20 bg-gradient-to-r from-gold to-transparent"></div>
+                        <span class="text-xs tracking-widest uppercase text-slate-400 font-medium">Gold Contabilidade & Consultoria</span>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 reveal-scale delay-200">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <div class="absolute -inset-2 rounded-2xl gold-gradient-bg opacity-25 blur-lg"></div>
+                        <div class="relative rounded-2xl overflow-hidden border border-gold/40 bg-dark-800 shadow-2xl">
+                            <img src="FOTOS/Cleves - Imagen.jpg" 
+                                 alt="Francisco Cleves - Responsável Técnico" 
+                                 class="w-full h-[440px] sm:h-[490px] object-cover object-top filter contrast-105"
+                                 onerror="this.onerror=null; this.src='FOTOS/Cleves - Imagen.png';">
+                            <!-- Overlay com degradê transparente suave na parte inferior -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark-900/60 via-dark-900/20 to-transparent pointer-events-none"></div>
+                            <div class="absolute bottom-4 left-4 right-4 p-4 rounded-xl glass-dark border border-gold/30">
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <p class="text-[10px] uppercase tracking-widest text-gold font-semibold">Responsável Técnico</p>
+                                        <h3 class="font-serif text-lg font-bold text-white">Francisco Cleves</h3>
+                                    </div>
+                                    <span class="px-3 py-1 text-xs font-mono tracking-wider text-gold-light bg-gold/10 border border-gold/30 rounded-md">CRC: 019430</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE A GOLD -->
+    <section id="sobre" class="py-24 bg-ice relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                <div class="lg:col-span-7 reveal-left">
+                    <div class="w-full text-center mb-4">
+                        <span class="inline-block text-2xl uppercase tracking-widest text-gold-dark font-bold">
+                            Quem Somos
+                        </span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-dark-900 mb-6 leading-tight">
+                        Há mais de 11 anos, transformamos a <span class="gold-gradient-text">contabilidade</span> em uma ferramenta para o crescimento dos nossos clientes.
+                    </h2>
+                    <p class="text-slate-600 text-base sm:text-lg leading-relaxed mb-4 font-normal">
+                        Somos um escritório de contabilidade comprometido em oferecer segurança, confiança e soluções estratégicas para empresas que desejam crescer de forma organizada e sustentável.
+                    </p>
+                    <p class="text-slate-600 text-base sm:text-lg leading-relaxed mb-6 font-normal">
+                        Mais do que cuidar de números e obrigações, buscamos estar próximos de cada cliente, oferecendo orientação, planejamento e suporte para decisões importantes.
+                    </p>
+                    <p class="text-dark-900 font-serif text-lg font-bold italic border-l-2 border-gold pl-4 my-6">
+                        Experiência que gera confiança. Contabilidade que impulsiona resultados.
+                    </p>
+
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4 border-t border-slate-200">
+                        <div class="p-4 rounded-xl bg-white border border-slate-100 shadow-sm text-center">
+                            <div class="w-10 h-10 mx-auto mb-3 rounded-full bg-gold/10 flex items-center justify-center text-gold-dark">
+                                <i class="fa-solid fa-shield-halved text-lg"></i>
+                            </div>
+                            <h3 class="font-serif font-bold text-dark-900 text-lg">Confiança</h3>
+                        </div>
+                        <div class="p-4 rounded-xl bg-white border border-slate-100 shadow-sm text-center">
+                            <div class="w-10 h-10 mx-auto mb-3 rounded-full bg-gold/10 flex items-center justify-center text-gold-dark">
+                                <i class="fa-solid fa-chess-knight text-lg"></i>
+                            </div>
+                            <h3 class="font-serif font-bold text-dark-900 text-lg">Estratégia</h3>
+                        </div>
+                        <div class="p-4 rounded-xl bg-white border border-slate-100 shadow-sm text-center">
+                            <div class="w-10 h-10 mx-auto mb-3 rounded-full bg-gold/10 flex items-center justify-center text-gold-dark">
+                                <i class="fa-solid fa-microchip text-lg"></i>
+                            </div>
+                            <h3 class="font-serif font-bold text-dark-900 text-lg">Tecnologia</h3>
+                        </div>
+                        <div class="p-4 rounded-xl bg-white border border-slate-100 shadow-sm text-center">
+                            <div class="w-10 h-10 mx-auto mb-3 rounded-full bg-gold/10 flex items-center justify-center text-gold-dark">
+                                <i class="fa-solid fa-handshake-simple text-lg"></i>
+                            </div>
+                            <h3 class="font-serif font-bold text-dark-900 text-lg">Proximidade</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 relative reveal-right">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <div class="absolute -inset-2 rounded-2xl gold-gradient-bg opacity-20 blur-lg"></div>
+                        <div class="relative rounded-2xl overflow-hidden shadow-2xl bg-dark-900 border border-gold/30">
+                            <img src="FOTOS/gold - frente.jpg" 
+                                 alt="Gold Contabilidade - Nosso Escritório" 
+                                 class="w-full h-[450px] object-cover object-center filter brightness-100 contrast-105"
+                                 onerror="this.onerror=null; this.src='FOTOS/gold - frente.png';">
+                            <!-- Overlay com degradê transparente suave na parte inferior -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark-900/60 via-dark-900/20 to-transparent pointer-events-none"></div>
+                            <div class="absolute bottom-6 left-6 right-6 p-4 rounded-xl glass-dark border border-gold/30 text-white">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-2 h-8 bg-gold rounded-full"></div>
+                                    <div>
+                                        <p class="text-xs uppercase tracking-wider text-gold">Ambiente Corporativo</p>
+                                        <p class="font-serif font-bold text-lg text-white">Nosso Escritório</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section id="servicos" class="py-24 bg-dark-900 text-white relative overflow-hidden">
+        <!-- Imagem de Fundo da Seção de Serviços -->
+        <div class="absolute inset-0 z-0">
+            <img src="FOTOS/Contabil.jpg" 
+                 alt="Gold Contabilidade - Serviços" 
+                 class="w-full h-full object-cover object-center filter brightness-40 contrast-110"
+                 onerror="if(!this.dataset.triedPng){ this.dataset.triedPng=1; this.src='FOTOS/Contabil.png'; } else if(!this.dataset.triedJpeg){ this.dataset.triedJpeg=1; this.src='FOTOS/Contabil.jpeg'; }">
+            <div class="absolute inset-0 bg-dark-900/40 backdrop-blur-[2px]"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-dark-900/40 via-dark-900/35 to-dark-900/40"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <span class="text-xs uppercase tracking-widest text-gold font-bold">Nossa Casuística & Especialidades</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-white mt-2 mb-4">
+                    Soluções Contábeis & Consultoria Empresarial
+                </h2>
+                <div class="w-16 h-0.5 gold-gradient-bg mx-auto mb-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="reveal-scale delay-100 bg-dark-800/45 backdrop-blur-md rounded-2xl p-8 shadow-xl border border-gold/30 hover:border-gold transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-dark-900/50 flex items-center justify-center text-gold mb-6 border border-gold/30 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fa-solid fa-chart-line text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-white mb-3 group-hover:text-gold transition-colors">Contabilidade Empresarial</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6">Escrituração completa, demonstrações contábeis e relatórios executivos para alta gestão.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="reveal-scale delay-200 bg-dark-800/45 backdrop-blur-md rounded-2xl p-8 shadow-xl border border-gold/30 hover:border-gold transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-dark-900/50 flex items-center justify-center text-gold mb-6 border border-gold/30 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fa-solid fa-calculator text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-white mb-3 group-hover:text-gold transition-colors">Gestão Fiscal e Tributária</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 text-slate-300">Apuração precisa de tributos, guias e obrigações acessórias com rigidez técnica.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="reveal-scale delay-300 bg-dark-800/45 backdrop-blur-md rounded-2xl p-8 shadow-xl border border-gold/30 hover:border-gold transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-dark-900/50 flex items-center justify-center text-gold mb-6 border border-gold/30 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fa-solid fa-users-gear text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-white mb-3 group-hover:text-gold transition-colors">Departamento Pessoal & Trabalhista</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6">Folha de pagamento, férias, 13º, rescisões e cumprimento do eSocial e da CLT.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIFERENCIAIS -->
+    <section id="diferenciais" class="py-24 bg-dark-900 text-white relative overflow-hidden border-t border-gold/20">
+        <!-- Imagem de Fundo da Seção de Diferenciais (Página 4) -->
+        <div class="absolute inset-0 z-0">
+            <img src="FOTOS/Rayfson - Capa.jpg" 
+                 alt="Gold Contabilidade - Diferenciais" 
+                 class="w-full h-full object-cover object-center filter brightness-90 contrast-105"
+                 onerror="if(!this.dataset.triedPng){ this.dataset.triedPng=1; this.src='FOTOS/Rayfson - Capa.png'; } else if(!this.dataset.triedJpeg){ this.dataset.triedJpeg=1; this.src='FOTOS/Rayfson - Capa.jpeg'; }">
+            <!-- Camada de sobreposição com 50% de opacidade de cor -->
+            <div class="absolute inset-0 bg-dark-900/50 backdrop-blur-[1px]"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-dark-900/50 via-dark-900/50 to-dark-900/50"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Coluna de Texto & Conteúdo -->
+                <div class="lg:col-span-7 reveal-left space-y-6">
+                    <div>
+                        <span class="text-xs uppercase tracking-widest text-gold font-bold">Por que a Gold?</span>
+                        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-white mt-2 mb-4 leading-tight">
+                            Diferenciais que geram valor tangível.
+                        </h2>
+                        <p class="text-slate-300 text-base leading-relaxed">
+                            Proporcionamos a aliança perfeita entre atendimento personalizado, ferramentas modernas e visão estratégica.
+                        </p>
+                    </div>
+
+                    <!-- Bloco de Texto Especialista Fiscal -->
+                    <div class="p-6 sm:p-8 rounded-2xl bg-dark-800/85 backdrop-blur-md border border-gold/30 shadow-xl space-y-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-gold/10 border border-gold/30 flex items-center justify-center text-gold font-bold text-base shrink-0">
+                                <i class="fa-solid fa-user-shield"></i>
+                            </div>
+                            <h3 class="text-xl font-serif font-bold text-white">Especialista Fiscal ao seu lado</h3>
+                        </div>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Ter um especialista fiscal acompanhando sua empresa significa muito mais do que calcular impostos. É contar com um profissional preparado para identificar oportunidades tributárias, prevenir riscos, garantir o cumprimento das obrigações fiscais e orientar decisões com segurança.
+                        </p>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Com acompanhamento especializado, sua empresa ganha mais controle, economia, conformidade e tranquilidade para crescer, enquanto nós cuidamos da complexidade tributária.
+                        </p>
+                    </div>
+
+                    <!-- Bloco de Atendimento Próximo com Ana Kethelly (Secretária) -->
+                    <div class="p-6 sm:p-8 rounded-2xl bg-dark-800/85 backdrop-blur-md border border-gold/30 shadow-xl space-y-4">
+                        <div class="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+                            <div class="relative w-56 h-56 sm:w-64 sm:h-64 rounded-xl overflow-hidden shrink-0 border border-gold/40 shadow-md bg-dark-900">
+                                <img src="FOTOS/Secretária.jpg" 
+                                     alt="Ana Kethelly - Secretária & Atendimento" 
+                                     class="w-full h-full object-cover object-top filter contrast-105"
+                                     onerror="if(!this.dataset.triedPng){ this.dataset.triedPng=1; this.src='FOTOS/Secretária.png'; } else if(!this.dataset.triedNoAccent){ this.dataset.triedNoAccent=1; this.src='FOTOS/Secretaria.jpg'; } else if(!this.dataset.triedNoAccentPng){ this.dataset.triedNoAccentPng=1; this.src='FOTOS/Secretaria.png'; }">
+                                <div class="absolute inset-0 bg-gradient-to-t from-dark-900/60 via-transparent to-transparent pointer-events-none"></div>
+                            </div>
+                            <div class="space-y-1.5 flex-1">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-2 h-2 rounded-full bg-gold animate-pulse"></div>
+                                    <span class="text-xs uppercase tracking-wider text-gold font-bold">Atendimento Próximo & Humanizado</span>
+                                </div>
+                                <h3 class="text-xl font-serif font-bold text-white">Ana Kethelly</h3>
+                                <p class="text-xs text-gold-light font-semibold uppercase tracking-wider">Secretária & Suporte Executivo</p>
+                                <p class="text-slate-300 text-sm leading-relaxed pt-1">
+                                    Um atendimento humanizado, rápido e eficiente garante que sua empresa nunca fique sem respostas quando mais precisa. Com empatia, agilidade e comunicação direta, nossa equipe cuida de suas solicitações com prioridade, transparência e atenção personalizada em cada contato.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Grid de Recursos Complementares -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="p-5 rounded-xl bg-dark-800/85 backdrop-blur-md border border-slate-700/80 shadow-md">
+                            <div class="w-10 h-10 rounded-lg bg-gold/10 border border-gold/30 flex items-center justify-center text-gold mb-3">
+                                <i class="fa-solid fa-headset text-lg"></i>
+                            </div>
+                            <h4 class="text-base font-serif font-bold text-white mb-1">Agilidade e Solução</h4>
+                            <p class="text-slate-300 text-xs leading-relaxed">Comunicação descomplicada para esclarecer dúvidas e atender demandas com rapidez.</p>
+                        </div>
+                        <div class="p-5 rounded-xl bg-dark-800/85 backdrop-blur-md border border-slate-700/80 shadow-md">
+                            <div class="w-10 h-10 rounded-lg bg-gold/10 border border-gold/30 flex items-center justify-center text-gold mb-3">
+                                <i class="fa-solid fa-compass text-lg"></i>
+                            </div>
+                            <h4 class="text-base font-serif font-bold text-white mb-1">Visão Estratégica</h4>
+                            <p class="text-slate-300 text-xs leading-relaxed">Análise inteligente de dados para orientar suas decisões com segurança.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coluna com Imagem de Rayfson Brandão -->
+                <div class="lg:col-span-5 reveal-right">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <div class="absolute -inset-2 rounded-2xl gold-gradient-bg opacity-20 blur-lg"></div>
+                        <div class="relative rounded-2xl overflow-hidden border border-gold/40 bg-dark-900 shadow-2xl">
+                            <!-- Imagem com fallbacks para .jpg, .png e .jpeg -->
+                            <img src="FOTOS/FOTO-RAYFSON.jpg" 
+                                 alt="Contador Rayfson Brandão - Diretor Geral & Especialista Fiscal" 
+                                 class="w-full h-[480px] sm:h-[540px] object-cover object-top filter contrast-105"
+                                 onerror="if(!this.dataset.triedPng){ this.dataset.triedPng=1; this.src='FOTOS/FOTO-RAYFSON.png'; } else if(!this.dataset.triedJpeg){ this.dataset.triedJpeg=1; this.src='FOTOS/FOTO-RAYFSON.jpeg'; }">
+                            <!-- Overlay com degradê transparente suave na parte inferior -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark-900/60 via-dark-900/20 to-transparent pointer-events-none"></div>
+                            
+                            <!-- Card Overlay com Identificação do Contador -->
+                            <div class="absolute bottom-4 left-4 right-4 p-5 rounded-xl glass-dark border border-gold/30">
+                                <div class="flex items-center justify-between gap-3">
+                                    <div>
+                                        <span class="text-[11px] uppercase tracking-widest text-gold font-bold block mb-0.5">Contador</span>
+                                        <h3 class="font-serif text-xl font-bold text-white">Rayfson Brandão</h3>
+                                        <p class="text-xs text-slate-300 font-medium mt-0.5">Diretor Geral & especialista fiscal</p>
+                                    </div>
+                                    <div class="w-10 h-10 rounded-lg bg-gold/10 border border-gold/30 flex items-center justify-center text-gold shrink-0">
+                                        <i class="fa-solid fa-award text-lg"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ABERTURA DE EMPRESAS & DEPARTAMENTO SOCIETÁRIO -->
+    <section id="abertura" class="py-24 bg-dark-900 text-white relative border-t border-gold/30 overflow-hidden">
+        <!-- Imagem de Fundo da Seção de Abertura de Empresa -->
+        <div class="absolute inset-0 z-0">
+            <img src="FOTOS/Abertura de empresa - Capa.jpg" 
+                 alt="Gold Contabilidade - Abertura de Empresa" 
+                 class="w-full h-full object-cover object-center filter brightness-75 contrast-105"
+                 onerror="if(!this.dataset.triedPng){ this.dataset.triedPng=1; this.src='FOTOS/Abertura de empresa - Capa.png'; } else if(!this.dataset.triedJpeg){ this.dataset.triedJpeg=1; this.src='FOTOS/Abertura de empresa - Capa.jpeg'; }">
+            <div class="absolute inset-0 bg-dark-900/50 backdrop-blur-[1px]"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-dark-900/50 via-dark-900/50 to-dark-900/50"></div>
+        </div>
+
+        <div class="absolute -top-32 right-0 w-96 h-96 bg-gold/10 rounded-full filter blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <span class="text-xs uppercase tracking-widest text-gold font-bold">Departamento Societário & Consultoria</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-white mt-2 mb-4">
+                    Abertura & Legalização de Empresas
+                </h2>
+                <div class="w-16 h-0.5 gold-gradient-bg mx-auto mb-4"></div>
+                <p class="text-slate-300 text-base sm:text-lg font-light">
+                    Tire a sua ideia do papel com agilidade, economia tributária e total proteção jurídica para o seu patrimônio.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Coluna de Apresentação de João Victor Araújo -->
+                <div class="lg:col-span-5 reveal-left">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <div class="absolute -inset-2 rounded-2xl gold-gradient-bg opacity-20 blur-lg"></div>
+                        <div class="relative rounded-2xl overflow-hidden border border-gold/40 bg-dark-800 shadow-2xl">
+                            <img src="FOTOS/Victor - Societária.jpg" 
+                                 alt="João Victor Araújo - Dpt. Societário" 
+                                 class="w-full h-[480px] sm:h-[540px] object-cover object-top filter contrast-105"
+                                 onerror="if(!this.dataset.triedPng){ this.dataset.triedPng=1; this.src='FOTOS/Victor - Societária.png'; } else if(!this.dataset.triedNoAccent){ this.dataset.triedNoAccent=1; this.src='FOTOS/Victor - Societaria.jpg'; } else if(!this.dataset.triedNoAccentPng){ this.dataset.triedNoAccentPng=1; this.src='FOTOS/Victor - Societaria.png'; }">
+                            
+                            <!-- Overlay com degradê suave -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark-900/60 via-dark-900/20 to-transparent pointer-events-none"></div>
+
+                            <!-- Card de Identificação -->
+                            <div class="absolute bottom-4 left-4 right-4 p-5 rounded-xl glass-dark border border-gold/30">
+                                <div class="flex items-center justify-between gap-3">
+                                    <div>
+                                        <span class="text-[11px] uppercase tracking-widest text-gold font-bold block mb-0.5">Especialista Societário</span>
+                                        <h3 class="font-serif text-xl font-bold text-white">João Victor Araújo</h3>
+                                        <p class="text-xs text-slate-300 font-medium mt-0.5">Dpt. Societário & Regularização</p>
+                                    </div>
+                                    <div class="w-10 h-10 rounded-lg bg-gold/10 border border-gold/30 flex items-center justify-center text-gold shrink-0">
+                                        <i class="fa-solid fa-file-signature text-lg"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coluna Informativa e Guia de Abertura -->
+                <div class="lg:col-span-7 space-y-8 reveal-right">
+                    
+                    <!-- Vantagens de abrir um CNPJ -->
+                    <div class="bg-dark-800 p-6 sm:p-8 rounded-2xl border border-slate-800 space-y-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-gold/10 border border-gold/30 flex items-center justify-center text-gold">
+                                <i class="fa-solid fa-briefcase text-lg"></i>
+                            </div>
+                            <h3 class="text-xl font-serif font-bold text-white">Por que ter o seu próprio CNPJ?</h3>
+                        </div>
+                        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-sm text-slate-300">
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-circle-check text-gold mt-1 shrink-0 text-xs"></i>
+                                <span><strong>Economia Tributária:</strong> Imposto de Renda no CPF chega a 27,5%, enquanto no CNPJ (Simples Nacional) começa em 4%.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-circle-check text-gold mt-1 shrink-0 text-xs"></i>
+                                <span><strong>Emissão de Nota Fiscal:</strong> Essencial para fechar contratos com grandes empresas e órgãos públicos.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-circle-check text-gold mt-1 shrink-0 text-xs"></i>
+                                <span><strong>Credibilidade no Mercado:</strong> Transmite profissionalismo e autoridade aos clientes e fornecedores.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-circle-check text-gold mt-1 shrink-0 text-xs"></i>
+                                <span><strong>Acesso a Crédito:</strong> Linhas de financiamento bancário e capital de giro exclusivas para empresas.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Qual o melhor tipo de empresa? -->
+                    <div class="bg-dark-800 p-6 sm:p-8 rounded-2xl border border-slate-800 space-y-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-gold/10 border border-gold/30 flex items-center justify-center text-gold">
+                                <i class="fa-solid fa-sitemap text-lg"></i>
+                            </div>
+                            <h3 class="text-xl font-serif font-bold text-white">Qual o melhor tipo de empresa para o seu negócio?</h3>
+                        </div>
+                        <p class="text-slate-300 text-sm leading-relaxed font-light">
+                            Nossa equipe societária analisa o seu modelo de negócio para enquadrá-lo na estrutura ideal:
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1">
+                            <div class="p-4 rounded-xl bg-dark-900 border border-slate-700/60">
+                                <span class="text-xs font-bold text-gold uppercase tracking-wider block mb-1">SLU</span>
+                                <h4 class="font-bold text-sm text-white mb-1">Sociedade Limitada Unipessoal</h4>
+                                <p class="text-xs text-slate-400">Para empreender sozinho sem comprometer o patrimônio pessoal.</p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-dark-900 border border-slate-700/60">
+                                <span class="text-xs font-bold text-gold uppercase tracking-wider block mb-1">LTDA</span>
+                                <h4 class="font-bold text-sm text-white mb-1">Sociedade Empresária Limitada</h4>
+                                <p class="text-xs text-slate-400">Ideal para negócios com dois ou mais sócios com responsabilidade delimitada.</p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-dark-900 border border-slate-700/60">
+                                <span class="text-xs font-bold text-gold uppercase tracking-wider block mb-1">ME / EPP</span>
+                                <h4 class="font-bold text-sm text-white mb-1">Microempresa & Pequeno Porte</h4>
+                                <p class="text-xs text-slate-400">Enquadramento sob medida no Simples Nacional, Lucro Presumido ou Real.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Como Começar + CTA -->
+                    <div class="bg-dark-800 p-6 sm:p-8 rounded-2xl border border-gold/30 space-y-6">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-gold/10 border border-gold/30 flex items-center justify-center text-gold">
+                                <i class="fa-solid fa-rocket text-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-serif font-bold text-white">Como começar?</h3>
+                                <p class="text-xs text-slate-400">Você não precisa se preocupar com a burocracia. Nós cuidamos de tudo.</p>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
+                            <div class="p-3 rounded-lg bg-dark-900 border border-slate-800">
+                                <span class="w-6 h-6 mx-auto mb-2 rounded-full bg-gold/20 text-gold font-bold text-xs flex items-center justify-center">1</span>
+                                <span class="text-xs font-semibold text-slate-200 block">Consulta Inicial</span>
+                            </div>
+                            <div class="p-3 rounded-lg bg-dark-900 border border-slate-800">
+                                <span class="w-6 h-6 mx-auto mb-2 rounded-full bg-gold/20 text-gold font-bold text-xs flex items-center justify-center">2</span>
+                                <span class="text-xs font-semibold text-slate-200 block">Estudo de CNAE</span>
+                            </div>
+                            <div class="p-3 rounded-lg bg-dark-900 border border-slate-800">
+                                <span class="w-6 h-6 mx-auto mb-2 rounded-full bg-gold/20 text-gold font-bold text-xs flex items-center justify-center">3</span>
+                                <span class="text-xs font-semibold text-slate-200 block">Junta Comercial</span>
+                            </div>
+                            <div class="p-3 rounded-lg bg-dark-900 border border-slate-800">
+                                <span class="w-6 h-6 mx-auto mb-2 rounded-full bg-gold/20 text-gold font-bold text-xs flex items-center justify-center">4</span>
+                                <span class="text-xs font-semibold text-slate-200 block">CNPJ & Licenças</span>
+                            </div>
+                        </div>
+
+                        <div class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-slate-800">
+                            <div>
+                                <p class="text-xs text-slate-300 font-medium">Pronto para dar o primeiro passo?</p>
+                                <p class="text-[11px] text-slate-400">Fale diretamente com a equipe do Dpt. Societário.</p>
+                            </div>
+                            <a href="https://wa.me/5591985279847?text=Olá!%20Gostaria%20de%20falar%20com%20o%20Departamento%20Societário%20para%20abrir%20minha%20empresa%20ou%20regularizar%20meu%20CNPJ." 
+                               target="_blank" 
+                               rel="noopener noreferrer" 
+                               class="w-full sm:w-auto px-6 py-3.5 text-xs font-bold tracking-widest text-dark-900 uppercase gold-gradient-bg gold-gradient-bg-hover rounded-lg shadow-xl transition-all text-center">
+                                <i class="fa-brands fa-whatsapp mr-2 text-sm"></i> ABRIR MINHA EMPRESA AGORA
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CÁLCULO TRIBUTÁRIO (SIMULADOR DE IMPOSTOS) -->
+    <section id="calculadora" class="py-24 bg-beige relative border-t border-slate-200/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <span class="text-xs uppercase tracking-widest text-gold-dark font-bold">Simulador Fiscal</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-dark-900 mt-2 mb-4">
+                    Estimativa de Cálculo Tributário
+                </h2>
+                <div class="w-16 h-0.5 gold-gradient-bg mx-auto mb-4"></div>
+                <p class="text-slate-600 text-base sm:text-lg">
+                    Simule uma estimativa de impostos para o seu faturamento mensal nos regimes tributários do Brasil.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <div class="lg:col-span-5 bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm reveal-left">
+                    <h3 class="text-xl font-serif font-bold text-dark-900 mb-6 flex items-center gap-3">
+                        <span class="w-8 h-8 rounded-lg bg-dark-900 text-gold flex items-center justify-center text-sm">
+                            <i class="fa-solid fa-calculator"></i>
+                        </span>
+                        Dados da Sua Empresa
+                    </h3>
+
+                    <div class="mb-6">
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-3">Ramo de Atuação *</label>
+                        <div class="grid grid-cols-3 gap-2">
+                            <button type="button" onclick="setSector('comercio')" id="btn-comercio" class="sector-btn py-3 px-2 text-xs font-semibold rounded-lg border border-gold bg-gold/10 text-dark-900">Comércio</button>
+                            <button type="button" onclick="setSector('industria')" id="btn-industria" class="sector-btn py-3 px-2 text-xs font-semibold rounded-lg border border-slate-200 bg-slate-50 text-slate-600">Indústria</button>
+                            <button type="button" onclick="setSector('servico')" id="btn-servico" class="sector-btn py-3 px-2 text-xs font-semibold rounded-lg border border-slate-200 bg-slate-50 text-slate-600">Serviço</button>
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="faturamento" class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-2">Faturamento Mensal (R$) *</label>
+                        <div class="relative">
+                            <span class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 font-semibold text-sm">R$</span>
+                            <input type="text" id="faturamento" value="50.000,00" oninput="handleRevenueInput(this)" class="w-full pl-12 pr-4 py-3.5 text-lg font-bold text-dark-900 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:border-gold">
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <input type="range" id="faturamento-range" min="10000" max="500000" step="5000" value="50000" oninput="handleSliderInput(this.value)" class="w-full accent-gold cursor-pointer">
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 space-y-4 reveal-right">
+                    <div class="p-4 rounded-xl bg-dark-900 text-white flex flex-col sm:flex-row items-center justify-between gap-4 border border-gold/30">
+                        <div>
+                            <span class="text-[10px] font-semibold uppercase tracking-widest text-gold block">Melhor Escolha Estimada</span>
+                            <h4 id="best-regime-title" class="font-serif text-xl font-bold text-white">Simples Nacional</h4>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div id="card-simples" class="bg-white p-6 rounded-2xl border-2 border-gold shadow-md relative">
+                            <h4 class="font-serif font-bold text-lg text-dark-900 mb-1">Simples Nacional</h4>
+                            <span id="rate-simples" class="text-xl font-bold text-dark-900 block mb-2">7,30%</span>
+                            <span id="tax-simples" class="text-2xl font-bold text-gold-dark block">R$ 3.650,00</span>
+                        </div>
+                        <div id="card-presumido" class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm relative">
+                            <h4 class="font-serif font-bold text-lg text-dark-900 mb-1">Lucro Presumido</h4>
+                            <span id="rate-presumido" class="text-xl font-bold text-dark-900 block mb-2">8,50%</span>
+                            <span id="tax-presumido" class="text-2xl font-bold text-dark-900 block">R$ 4.250,00</span>
+                        </div>
+                        <div id="card-real" class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm relative">
+                            <h4 class="font-serif font-bold text-lg text-dark-900 mb-1">Lucro Real</h4>
+                            <span id="rate-real" class="text-xl font-bold text-dark-900 block mb-2">11,20%</span>
+                            <span id="tax-real" class="text-2xl font-bold text-dark-900 block">R$ 5.600,00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CÁLCULO TRABALHISTA E RESCISÃO CONTRATUAL -->
+    <section id="simulador-trabalhista" class="py-24 bg-dark-900 text-white relative border-t border-gold/30">
+        <!-- Subtle Glow Filter -->
+        <div class="absolute top-1/2 left-0 w-72 h-72 bg-gold/10 rounded-full filter blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <span class="text-xs uppercase tracking-widest text-gold font-bold">Ferramenta Interativa Trabalhista</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-white mt-2 mb-4">
+                    Simulador Completo de Cálculo Trabalhista
+                </h2>
+                <div class="w-16 h-0.5 gold-gradient-bg mx-auto mb-4"></div>
+                <p class="text-slate-300 text-base sm:text-lg font-light">
+                    Calcule estimativas completas de verbas rescisórias: Férias, 13º Salário, Aviso Prévio, Multa do FGTS e o valor líquido a receber pelo funcionário.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Inputs Form Box -->
+                <div class="lg:col-span-5 bg-dark-800 p-6 sm:p-8 rounded-2xl border border-gold/30 shadow-2xl reveal-left">
+                    <h3 class="text-xl font-serif font-bold text-white mb-6 flex items-center gap-3">
+                        <span class="w-8 h-8 rounded-lg bg-gold/20 text-gold flex items-center justify-center text-sm border border-gold/30">
+                            <i class="fa-solid fa-user-check"></i>
+                        </span>
+                        Dados Contratuais
+                    </h3>
+
+                    <form id="trabalhista-form" onsubmit="event.preventDefault(); calculateLabor();">
+                        <!-- Salário Bruto -->
+                        <div class="mb-5">
+                            <label for="trab-salario" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">
+                                Último Salário Bruto (R$) *
+                            </label>
+                            <div class="relative">
+                                <span class="absolute left-4 top-1/2 -translate-y-1/2 text-gold font-semibold text-sm">R$</span>
+                                <input type="text" id="trab-salario" value="3.500,00" oninput="formatCurrencyInput(this)"
+                                       class="w-full pl-12 pr-4 py-3 text-base font-bold text-white bg-dark-900 border border-slate-700 rounded-lg focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-all">
+                            </div>
+                        </div>
+
+                        <!-- Tipo de Desligamento -->
+                        <div class="mb-5">
+                            <label for="trab-motivo" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">
+                                Motivo da Rescisão / Demissão *
+                            </label>
+                            <select id="trab-motivo" onchange="calculateLabor()" 
+                                    class="w-full px-4 py-3 text-sm font-medium text-white bg-dark-900 border border-slate-700 rounded-lg focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-all">
+                                <option value="sem_justa_causa" selected>Demissão Sem Justa Causa (pelo Empregador)</option>
+                                <option value="pedido_demissao">Pedido de Demissão (pelo Empregado)</option>
+                                <option value="acordo">Acordo de Demissão (Art. 484-A CLT)</option>
+                                <option value="com_justa_causa">Demissão Com Justa Causa</option>
+                            </select>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
+                            <!-- Dias Trabalhados no Mês da Rescisão -->
+                            <div>
+                                <label for="trab-dias-mes" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">
+                                    Dias Trab. no Mês *
+                                </label>
+                                <input type="number" id="trab-dias-mes" min="1" max="31" value="15" onchange="calculateLabor()"
+                                       class="w-full px-4 py-3 text-sm font-semibold text-white bg-dark-900 border border-slate-700 rounded-lg focus:outline-none focus:border-gold">
+                            </div>
+
+                            <!-- Meses Trabalhados no Ano (13º) -->
+                            <div>
+                                <label for="trab-meses-13" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">
+                                    Meses p/ 13º (Ano) *
+                                </label>
+                                <input type="number" id="trab-meses-13" min="0" max="12" value="8" onchange="calculateLabor()"
+                                       class="w-full px-4 py-3 text-sm font-semibold text-white bg-dark-900 border border-slate-700 rounded-lg focus:outline-none focus:border-gold">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
+                            <!-- Meses p/ Férias Proporcionais -->
+                            <div>
+                                <label for="trab-meses-ferias" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">
+                                    Meses Férias Prop. *
+                                </label>
+                                <input type="number" id="trab-meses-ferias" min="0" max="12" value="10" onchange="calculateLabor()"
+                                       class="w-full px-4 py-3 text-sm font-semibold text-white bg-dark-900 border border-slate-700 rounded-lg focus:outline-none focus:border-gold">
+                            </div>
+
+                            <!-- Tem Férias Vencidas? -->
+                            <div>
+                                <label for="trab-ferias-vencidas" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">
+                                    Férias Vencidas? *
+                                </label>
+                                <select id="trab-ferias-vencidas" onchange="calculateLabor()"
+                                        class="w-full px-4 py-3 text-sm font-semibold text-white bg-dark-900 border border-slate-700 rounded-lg focus:outline-none focus:border-gold">
+                                    <option value="0">Não</option>
+                                    <option value="1">Sim (1 período)</option>
+                                    <option value="2">Sim (2 períodos)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                            <!-- Aviso Prévio -->
+                            <div>
+                                <label for="trab-aviso" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">
+                                    Aviso Prévio *
+                                </label>
+                                <select id="trab-aviso" onchange="calculateLabor()"
+                                        class="w-full px-4 py-3 text-sm font-semibold text-white bg-dark-900 border border-slate-700 rounded-lg focus:outline-none focus:border-gold">
+                                    <option value="indenizado" selected>Indenizado</option>
+                                    <option value="trabalhado">Trabalhado</option>
+                                    <option value="dispensado">Não Cumprido / Dispensado</option>
+                                </select>
+                            </div>
+
+                            <!-- Saldo FGTS Estimado -->
+                            <div>
+                                <label for="trab-fgts" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">
+                                    Saldo FGTS (R$)
+                                </label>
+                                <input type="text" id="trab-fgts" value="8.000,00" oninput="formatCurrencyInput(this)"
+                                       class="w-full px-4 py-3 text-sm font-semibold text-white bg-dark-900 border border-slate-700 rounded-lg focus:outline-none focus:border-gold">
+                            </div>
+                        </div>
+
+                        <button type="button" onclick="calculateLabor()"
+                                class="w-full py-3.5 px-6 text-xs font-bold tracking-widest text-dark-900 uppercase gold-gradient-bg gold-gradient-bg-hover rounded-lg shadow-lg transition-all">
+                            <i class="fa-solid fa-calculator mr-2"></i> CALCULAR VERBAS RESCISÓRIAS
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Simulation Output Detailed Breakdown -->
+                <div class="lg:col-span-7 space-y-6 reveal-right">
+                    
+                    <!-- Grand Total Banner Card -->
+                    <div class="p-6 rounded-2xl bg-gradient-to-r from-dark-800 via-dark-700 to-dark-800 border border-gold/40 shadow-xl relative overflow-hidden">
+                        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                            <div>
+                                <span class="text-xs uppercase tracking-widest text-gold font-semibold block mb-1">
+                                    Estimativa Líquida a Receber pelo Funcionário
+                                </span>
+                                <h3 id="rescisao-total-liquido" class="text-3xl sm:text-4xl font-serif font-bold gold-gradient-text">
+                                    R$ 0,00
+                                </h3>
+                                <p class="text-xs text-slate-400 mt-1">
+                                    (Já deduzidas estimativas de INSS e IRRF)
+                                </p>
+                            </div>
+
+                            <div class="bg-dark-900/80 px-4 py-3 rounded-xl border border-gold/20 text-right">
+                                <span class="text-[10px] uppercase text-slate-400 block font-semibold">Total Bruto das Verbas</span>
+                                <span id="rescisao-total-bruto" class="text-lg font-bold text-white">R$ 0,00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Line Items Detailed Breakdown Card -->
+                    <div class="bg-dark-800 p-6 sm:p-8 rounded-2xl border border-slate-800 shadow-xl space-y-4">
+                        <h4 class="text-sm uppercase tracking-wider font-bold text-gold border-b border-slate-700/80 pb-3 flex items-center justify-between">
+                            <span>Detalhamento dos Direitos Trabalhistas</span>
+                            <span class="text-xs text-slate-400 font-normal">Base de Cálculo CLT</span>
+                        </h4>
+
+                        <div class="space-y-3 text-sm">
+                            <!-- Saldo de Salário -->
+                            <div class="flex justify-between items-center py-1.5 border-b border-slate-800/60">
+                                <div>
+                                    <span class="text-slate-200 font-medium block">Saldo de Salário</span>
+                                    <span id="label-dias-salario" class="text-[11px] text-slate-400">15 dias trabalhados</span>
+                                </div>
+                                <span id="val-saldo-salario" class="font-mono font-semibold text-white">R$ 0,00</span>
+                            </div>
+
+                            <!-- 13º Salário Proporcional -->
+                            <div class="flex justify-between items-center py-1.5 border-b border-slate-800/60">
+                                <div>
+                                    <span class="text-slate-200 font-medium block">13º Salário Proporcional</span>
+                                    <span id="label-13-prop" class="text-[11px] text-slate-400">8/12 avos</span>
+                                </div>
+                                <span id="val-13-prop" class="font-mono font-semibold text-white">R$ 0,00</span>
+                            </div>
+
+                            <!-- Férias Proporcionais + 1/3 -->
+                            <div class="flex justify-between items-center py-1.5 border-b border-slate-800/60">
+                                <div>
+                                    <span class="text-slate-200 font-medium block">Férias Proporcionais + 1/3 Constitucional</span>
+                                    <span id="label-ferias-prop" class="text-[11px] text-slate-400">10/12 avos + terço</span>
+                                </div>
+                                <span id="val-ferias-prop" class="font-mono font-semibold text-white">R$ 0,00</span>
+                            </div>
+
+                            <!-- Férias Vencidas + 1/3 -->
+                            <div class="flex justify-between items-center py-1.5 border-b border-slate-800/60">
+                                <div>
+                                    <span class="text-slate-200 font-medium block">Férias Vencidas + 1/3 Constitucional</span>
+                                    <span id="label-ferias-vencidas" class="text-[11px] text-slate-400">Não aplicável</span>
+                                </div>
+                                <span id="val-ferias-vencidas" class="font-mono font-semibold text-white">R$ 0,00</span>
+                            </div>
+
+                            <!-- Aviso Prévio Indenizado -->
+                            <div class="flex justify-between items-center py-1.5 border-b border-slate-800/60">
+                                <div>
+                                    <span class="text-slate-200 font-medium block">Aviso Prévio Indenizado</span>
+                                    <span id="label-aviso" class="text-[11px] text-slate-400">30 dias indenizados</span>
+                                </div>
+                                <span id="val-aviso" class="font-mono font-semibold text-white">R$ 0,00</span>
+                            </div>
+
+                            <!-- Multa do FGTS -->
+                            <div class="flex justify-between items-center py-1.5 border-b border-slate-800/60">
+                                <div>
+                                    <span class="text-slate-200 font-medium block">Multa Rescisória do FGTS</span>
+                                    <span id="label-multa-fgts" class="text-[11px] text-slate-400">40% sobre saldo estimado</span>
+                                </div>
+                                <span id="val-multa-fgts" class="font-mono font-semibold text-emerald-400">R$ 0,00</span>
+                            </div>
+
+                            <!-- Descontos Estimados -->
+                            <div class="flex justify-between items-center py-1.5 text-rose-300">
+                                <div>
+                                    <span class="font-medium block">(-) Descontos Estimados (INSS / IRRF)</span>
+                                    <span class="text-[11px] text-rose-400/80">Retenção legal aproximada</span>
+                                </div>
+                                <span id="val-descontos" class="font-mono font-semibold">- R$ 0,00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Direct WhatsApp Consultation Button -->
+                    <div class="p-6 rounded-2xl bg-dark-800 border border-gold/30 flex flex-col sm:flex-row items-center justify-between gap-4">
+                        <div>
+                            <h4 class="font-serif font-bold text-white text-base">Precisa do cálculo formal com holerite e eSocial?</h4>
+                            <p class="text-xs text-slate-400 mt-0.5">Envie o resultado para o departamento pessoal da Gold Contabilidade.</p>
+                        </div>
+                        <a id="trabalhista-wa-btn" href="https://wa.me/5591985279847" target="_blank" rel="noopener noreferrer"
+                           class="w-full sm:w-auto px-6 py-3 text-xs font-bold tracking-widest text-dark-900 uppercase gold-gradient-bg gold-gradient-bg-hover rounded-lg shadow-md transition-all text-center whitespace-nowrap">
+                            <i class="fa-brands fa-whatsapp mr-1.5 text-sm"></i> AUDITAR CÁLCULO
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO DE IMPACTO (CTA) -->
+    <section class="py-20 bg-dark-900 relative overflow-hidden border-y border-gold/20">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 reveal-scale">
+            <div class="w-12 h-12 mx-auto mb-6 rounded-full border border-gold/40 flex items-center justify-center text-gold bg-dark-800">
+                <i class="fa-solid fa-crown text-lg"></i>
+            </div>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-white mb-6 leading-tight max-w-4xl mx-auto">
+                Seu negócio merece uma contabilidade que acompanhe o seu <span class="gold-gradient-text">crescimento</span>.
+            </h2>
+            <p class="text-slate-300 text-base sm:text-lg font-light max-w-2xl mx-auto mb-10 leading-relaxed">
+                “Conte com uma equipe preparada para cuidar dos números enquanto você concentra seus esforços no crescimento da sua empresa.”
+            </p>
+            <a href="https://wa.me/5591985279847?text=Olá!%20Quero%20falar%20com%20a%20Gold%20Contabilidade." 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="inline-flex items-center gap-3 px-8 py-4 text-xs font-bold tracking-widest text-dark-900 uppercase gold-gradient-bg gold-gradient-bg-hover rounded-lg shadow-2xl shadow-gold/20 transition-all duration-300 transform hover:-translate-y-1">
+                <span>QUERO FALAR COM A GOLD</span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="py-24 bg-ice relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <span class="text-xs uppercase tracking-widest text-gold-dark font-bold">Fale Conosco</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-dark-900 mt-2 mb-4">
+                    Inicie uma Parceria Estratégica
+                </h2>
+                <div class="w-16 h-0.5 gold-gradient-bg mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <div class="lg:col-span-5 space-y-8 reveal-left">
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm">
+                        <div class="flex items-center gap-3 mb-6 pb-4 border-b border-slate-100">
+                            <div class="w-10 h-10 rounded-lg bg-dark-900 flex items-center justify-center text-gold">
+                                <span class="font-serif font-bold text-lg">G</span>
+                            </div>
+                            <div>
+                                <h3 class="font-serif text-xl font-bold text-dark-900">Gold Contabilidade</h3>
+                                <p class="text-xs text-slate-500">Consultoria & Gestão Empresarial</p>
+                            </div>
+                        </div>
+
+                        <ul class="space-y-5 text-sm text-slate-600">
+                            <li class="flex items-start gap-4">
+                                <div class="w-8 h-8 rounded-md bg-gold/10 flex items-center justify-center text-gold-dark shrink-0 mt-0.5">
+                                    <i class="fa-solid fa-user-check text-sm"></i>
+                                </div>
+                                <div>
+                                    <span class="block text-xs font-semibold text-slate-400 uppercase tracking-wider">Responsável Técnico</span>
+                                    <span class="font-medium text-dark-900">Francisco Cleves</span> (CRC: 019430)
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <div class="w-8 h-8 rounded-md bg-gold/10 flex items-center justify-center text-gold-dark shrink-0 mt-0.5">
+                                    <i class="fa-brands fa-whatsapp text-sm"></i>
+                                </div>
+                                <div>
+                                    <span class="block text-xs font-semibold text-slate-400 uppercase tracking-wider">WhatsApp</span>
+                                    <a href="https://wa.me/5591985279847" target="_blank" class="font-medium text-dark-900 hover:text-gold-dark transition-colors">
+                                        (91) 98527-9847
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <div class="w-8 h-8 rounded-md bg-gold/10 flex items-center justify-center text-gold-dark shrink-0 mt-0.5">
+                                    <i class="fa-regular fa-envelope text-sm"></i>
+                                </div>
+                                <div>
+                                    <span class="block text-xs font-semibold text-slate-400 uppercase tracking-wider">E-mail</span>
+                                    <a href="mailto:plenacontabilidade7@gmail.com" class="font-medium text-dark-900 hover:text-gold-dark transition-colors break-all">
+                                        plenacontabilidade7@gmail.com
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 reveal-right">
+                    <div class="bg-white p-8 sm:p-10 rounded-2xl border border-slate-200/80 shadow-sm relative">
+                        <h3 class="text-2xl font-serif font-bold text-dark-900 mb-2">Envie uma Mensagem</h3>
+                        <p class="text-slate-500 text-sm mb-8">Preencha os dados abaixo. Nossa equipe entrará em contato prontamente.</p>
+
+                        <div id="form-alert" class="hidden mb-6 p-4 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-800 text-sm flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-emerald-600 text-lg"></i>
+                            <span>Sua mensagem foi enviada com sucesso! Em breve entraremos em contato.</span>
+                        </div>
+
+                        <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="nome" class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-2">Nome Completo *</label>
+                                    <input type="text" id="nome" required placeholder="Seu nome"
+                                           class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold text-sm text-dark-900 placeholder-slate-400 transition-all">
+                                </div>
+                                <div>
+                                    <label for="empresa" class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-2">Nome da Empresa</label>
+                                    <input type="text" id="empresa" placeholder="Sua empresa"
+                                           class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold text-sm text-dark-900 placeholder-slate-400 transition-all">
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="telefone" class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-2">Telefone / WhatsApp *</label>
+                                    <input type="tel" id="telefone" required placeholder="(00) 00000-0000"
+                                           class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold text-sm text-dark-900 placeholder-slate-400 transition-all">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-2">E-mail *</label>
+                                    <input type="email" id="email" required placeholder="seuemail@empresa.com"
+                                           class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold text-sm text-dark-900 placeholder-slate-400 transition-all">
+                                </div>
+                            </div>
+                            <div>
+                                <label for="mensagem" class="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-2">Mensagem *</label>
+                                <textarea id="mensagem" rows="4" required placeholder="Como a Gold Contabilidade pode auxiliar o seu negócio?"
+                                          class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold text-sm text-dark-900 placeholder-slate-400 transition-all"></textarea>
+                            </div>
+                            <button type="submit" 
+                                    class="w-full py-4 px-6 text-xs font-bold tracking-widest text-dark-900 uppercase gold-gradient-bg gold-gradient-bg-hover rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                                ENVIAR MENSAGEM
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/5591985279847?text=Olá!%20Vim%20pelo%20site%20da%20Gold%20Contabilidade." 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 bg-emerald-600 text-white rounded-full shadow-2xl hover:bg-emerald-500 hover:scale-110 transition-all duration-300 border-2 border-white/20 group">
+        <i class="fa-brands fa-whatsapp text-2xl"></i>
+    </a>
+
+    <!-- RODAPÉ -->
+    <footer class="bg-dark-900 text-slate-400 py-16 border-t border-gold/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 pb-12 border-b border-slate-800">
+                <div class="md:col-span-5 space-y-4">
+                    <a href="#inicio" class="inline-block">
+                        <img src="FOTOS/minha-logo.png" 
+                             alt="Gold Contabilidade Logo" 
+                             class="h-[67px] w-auto object-contain"
+                             onerror="this.onerror=null; this.src='FOTOS/minha-logo.jpg';">
+                    </a>
+                    <p class="text-sm text-slate-400 font-light max-w-sm leading-relaxed">
+                        Escritório especializado em contabilidade, planejamento fiscal, gestão e consultoria empresarial de alto padrão.
+                    </p>
+                </div>
+
+                <div class="md:col-span-4">
+                    <h4 class="text-xs uppercase tracking-widest text-gold font-semibold mb-4">Navegação</h4>
+                    <ul class="space-y-2.5 text-sm">
+                        <li><a href="#inicio" class="hover:text-gold transition-colors">Início</a></li>
+                        <li><a href="#sobre" class="hover:text-gold transition-colors">Sobre Nós</a></li>
+                        <li><a href="#servicos" class="hover:text-gold transition-colors">Serviços</a></li>
+                        <li><a href="#diferenciais" class="hover:text-gold transition-colors">Diferenciais</a></li>
+                        <li><a href="#abertura" class="hover:text-gold transition-colors">Abertura de Empresa</a></li>
+                        <li><a href="#calculadora" class="hover:text-gold transition-colors">Cálculo Tributário</a></li>
+                        <li><a href="#simulador-trabalhista" class="hover:text-gold transition-colors">Cálculo Trabalhista</a></li>
+                    </ul>
+                </div>
+
+                <div class="md:col-span-3">
+                    <h4 class="text-xs uppercase tracking-widest text-gold font-semibold mb-4">Redes</h4>
+                    <div class="flex space-x-3">
+                        <a href="https://instagram.com/escritorio.goldcontabilidade" target="_blank" class="w-10 h-10 rounded-lg bg-dark-800 border border-slate-700 flex items-center justify-center text-slate-300 hover:text-gold">
+                            <i class="fa-brands fa-instagram text-lg"></i>
+                        </a>
+                        <a href="https://wa.me/5591985279847" target="_blank" class="w-10 h-10 rounded-lg bg-dark-800 border border-slate-700 flex items-center justify-center text-slate-300 hover:text-gold">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+                <p>© Gold Contabilidade – Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Scroll Reveal Animation via IntersectionObserver
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -60px 0px',
+                threshold: 0.12
+            };
+
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+            revealElements.forEach(element => revealObserver.observe(element));
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        }
+
+        // Header Scroll
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-xl', 'bg-dark-900/95');
+            } else {
+                header.classList.remove('shadow-xl', 'bg-dark-900/95');
+            }
+        });
+
+        // Contact Form
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const alertBox = document.getElementById('form-alert');
+            const form = document.getElementById('contact-form');
+            if (alertBox && form) {
+                alertBox.classList.remove('hidden');
+                form.reset();
+                setTimeout(() => alertBox.classList.add('hidden'), 6000);
+            }
+        }
+
+        // TAX CALCULATOR LOGIC
+        let currentSector = 'comercio';
+        let currentRevenue = 50000;
+
+        function setSector(sector) {
+            currentSector = sector;
+            const buttons = {
+                'comercio': document.getElementById('btn-comercio'),
+                'industria': document.getElementById('btn-industria'),
+                'servico': document.getElementById('btn-servico')
+            };
+
+            Object.keys(buttons).forEach(key => {
+                if (key === sector) {
+                    buttons[key].className = 'sector-btn py-3 px-2 text-xs font-semibold rounded-lg border border-gold bg-gold/10 text-dark-900';
+                } else {
+                    buttons[key].className = 'sector-btn py-3 px-2 text-xs font-semibold rounded-lg border border-slate-200 bg-slate-50 text-slate-600';
+                }
+            });
+            calculateTaxes();
+        }
+
+        function handleRevenueInput(input) {
+            let valueStr = input.value.replace(/\D/g, '');
+            if (!valueStr) valueStr = '0';
+            let numericVal = parseFloat(valueStr) / 100;
+            currentRevenue = Math.max(numericVal, 1000);
+            input.value = currentRevenue.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+            document.getElementById('faturamento-range').value = Math.min(Math.max(currentRevenue, 10000), 500000);
+            calculateTaxes();
+        }
+
+        function handleSliderInput(val) {
+            currentRevenue = parseFloat(val);
+            document.getElementById('faturamento').value = currentRevenue.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+            calculateTaxes();
+        }
+
+        function calculateTaxes() {
+            const annualRev = currentRevenue * 12;
+            let simplesRate = 0.073;
+            let presumidoRate = 0.085;
+            let realRate = 0.112;
+
+            if (currentSector === 'comercio') {
+                simplesRate = annualRev <= 180000 ? 0.04 : (annualRev <= 360000 ? 0.073 : 0.095);
+                presumidoRate = 0.078;
+                realRate = 0.098;
+            } else if (currentSector === 'industria') {
+                simplesRate = annualRev <= 180000 ? 0.045 : (annualRev <= 360000 ? 0.078 : 0.100);
+                presumidoRate = 0.088;
+                realRate = 0.105;
+            } else {
+                simplesRate = annualRev <= 180000 ? 0.060 : (annualRev <= 360000 ? 0.112 : 0.135);
+                presumidoRate = 0.1453;
+                realRate = 0.125;
+            }
+
+            document.getElementById('rate-simples').innerText = (simplesRate * 100).toFixed(2).replace('.', ',') + '%';
+            document.getElementById('tax-simples').innerText = (currentRevenue * simplesRate).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+            document.getElementById('rate-presumido').innerText = (presumidoRate * 100).toFixed(2).replace('.', ',') + '%';
+            document.getElementById('tax-presumido').innerText = (currentRevenue * presumidoRate).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+            document.getElementById('rate-real').innerText = (realRate * 100).toFixed(2).replace('.', ',') + '%';
+            document.getElementById('tax-real').innerText = (currentRevenue * realRate).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+        }
+
+        // LABOR / RESCISION CALCULATOR LOGIC
+        function formatCurrencyInput(input) {
+            let valueStr = input.value.replace(/\D/g, '');
+            if (!valueStr) valueStr = '0';
+            let numericVal = parseFloat(valueStr) / 100;
+            input.value = numericVal.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+            calculateLabor();
+        }
+
+        function parseCurrencyValue(str) {
+            if (!str) return 0;
+            const cleaned = str.replace(/\./g, '').replace(',', '.');
+            return parseFloat(cleaned) || 0;
+        }
+
+        function calculateLabor() {
+            const salario = parseCurrencyValue(document.getElementById('trab-salario').value);
+            const motivo = document.getElementById('trab-motivo').value;
+            const diasMes = parseInt(document.getElementById('trab-dias-mes').value) || 0;
+            const meses13 = parseInt(document.getElementById('trab-meses-13').value) || 0;
+            const mesesFerias = parseInt(document.getElementById('trab-meses-ferias').value) || 0;
+            const feriasVencidasQtd = parseInt(document.getElementById('trab-ferias-vencidas').value) || 0;
+            const tipoAviso = document.getElementById('trab-aviso').value;
+            const saldoFgts = parseCurrencyValue(document.getElementById('trab-fgts').value);
+
+            let saldoSalario = 0;
+            let decimoTerceiro = 0;
+            let feriasProporcionais = 0;
+            let feriasVencidas = 0;
+            let avisoPrevio = 0;
+            let multaFgts = 0;
+
+            // 1. Saldo de Salário
+            saldoSalario = (salario / 30) * Math.min(diasMes, 31);
+
+            // 2. Justa Causa descarta direitos rescisórios exceto saldo de salário e férias vencidas
+            if (motivo === 'com_justa_causa') {
+                feriasVencidas = feriasVencidasQtd * (salario + (salario / 3));
+            } else if (motivo === 'pedido_demissao') {
+                // Pedido de demissão
+                decimoTerceiro = (salario / 12) * meses13;
+                feriasProporcionais = ((salario / 12) * mesesFerias) * 1.33333;
+                feriasVencidas = feriasVencidasQtd * (salario + (salario / 3));
+                if (tipoAviso === 'indenizado') {
+                    avisoPrevio = -salario; // Desconto de aviso prévio não cumprido
+                }
+            } else if (motivo === 'acordo') {
+                // Acordo trabalhista (Art. 484-A CLT)
+                decimoTerceiro = (salario / 12) * meses13;
+                feriasProporcionais = ((salario / 12) * mesesFerias) * 1.33333;
+                feriasVencidas = feriasVencidasQtd * (salario + (salario / 3));
+                avisoPrevio = tipoAviso === 'indenizado' ? (salario / 2) : 0;
+                multaFgts = saldoFgts * 0.20; // 20% no acordo
+            } else {
+                // Demissão sem justa causa (Direito integral)
+                decimoTerceiro = (salario / 12) * meses13;
+                feriasProporcionais = ((salario / 12) * mesesFerias) * 1.33333;
+                feriasVencidas = feriasVencidasQtd * (salario + (salario / 3));
+                avisoPrevio = tipoAviso === 'indenizado' ? salario : 0;
+                multaFgts = saldoFgts * 0.40; // 40% integral
+            }
+
+            const totalBruto = Math.max(0, saldoSalario + decimoTerceiro + feriasProporcionais + feriasVencidas + (avisoPrevio > 0 ? avisoPrevio : 0) + multaFgts);
+
+            // Estimativa simples de descontos tributários (INSS/IRRF aprox. sobre salários rescisórios)
+            let estimativaDescontos = 0;
+            const baseTributavel = saldoSalario + decimoTerceiro;
+            if (baseTributavel > 1412) {
+                estimativaDescontos = baseTributavel * 0.09;
+            } else {
+                estimativaDescontos = baseTributavel * 0.075;
+            }
+
+            const totalLiquido = Math.max(0, totalBruto - estimativaDescontos + (avisoPrevio < 0 ? avisoPrevio : 0));
+
+            // Format UI Outputs
+            document.getElementById('val-saldo-salario').innerText = saldoSalario.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+            document.getElementById('label-dias-salario').innerText = `${diasMes} dia(s) trabalhados no mês`;
+
+            document.getElementById('val-13-prop').innerText = decimoTerceiro.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+            document.getElementById('label-13-prop').innerText = `${meses13}/12 avos acumulados`;
+
+            document.getElementById('val-ferias-prop').innerText = feriasProporcionais.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+            document.getElementById('label-ferias-prop').innerText = `${mesesFerias}/12 avos + 1/3 constitucional`;
+
+            document.getElementById('val-ferias-vencidas').innerText = feriasVencidas.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+            document.getElementById('label-ferias-vencidas').innerText = feriasVencidasQtd > 0 ? `${feriasVencidasQtd} período(s) pendente(s)` : 'Nenhuma pendente';
+
+            if (avisoPrevio < 0) {
+                document.getElementById('val-aviso').innerText = `- ${Math.abs(avisoPrevio).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`;
+                document.getElementById('label-aviso').innerText = 'Desconto por aviso não cumprido';
+            } else {
+                document.getElementById('val-aviso').innerText = avisoPrevio.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+                document.getElementById('label-aviso').innerText = tipoAviso === 'indenizado' ? '30 dias indenizados pelo empregador' : 'Sem aviso indenizado';
+            }
+
+            document.getElementById('val-multa-fgts').innerText = multaFgts.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+            document.getElementById('label-multa-fgts').innerText = motivo === 'acordo' ? '20% (Acordo Art. 484-A)' : (motivo === 'sem_justa_causa' ? '40% do saldo FGTS informado' : 'Não aplicável');
+
+            document.getElementById('val-descontos').innerText = `- ${estimativaDescontos.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`;
+
+            document.getElementById('rescisao-total-bruto').innerText = totalBruto.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+            document.getElementById('rescisao-total-liquido').innerText = totalLiquido.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+            // WhatsApp Dynamic Message
+            const waMsg = encodeURIComponent(`Olá! Realizei uma simulação de Cálculo Trabalhista no site da Gold Contabilidade:\n• Salário Bruto: R$ ${salario.toLocaleString('pt-BR')}\n• Motivo: ${document.getElementById('trab-motivo').options[document.getElementById('trab-motivo').selectedIndex].text}\n• Total Estimado a Receber: R$ ${totalLiquido.toLocaleString('pt-BR')}\n\nGostaria de passar essas informações para conferência com o Departamento Pessoal.`);
+            document.getElementById('trabalhista-wa-btn').href = `https://wa.me/5591985279847?text=${waMsg}`;
+        }
+
+        // Initialize calculators on DOM ready
+        document.addEventListener('DOMContentLoaded', () => {
+            calculateTaxes();
+            calculateLabor();
+        });
+    </script>
+</body>
+</html>
